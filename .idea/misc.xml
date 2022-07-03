@@ -4,8 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_announcement.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_assignment.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_examination.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_lectures.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_main.xml" value="0.21851851851851853" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_register1.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_register2.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/toolbar.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/menu/menu.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

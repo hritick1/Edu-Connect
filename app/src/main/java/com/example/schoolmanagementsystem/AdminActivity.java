@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.admin;
+package com.example.schoolmanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
