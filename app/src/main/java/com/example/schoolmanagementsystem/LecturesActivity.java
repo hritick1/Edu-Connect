@@ -34,7 +34,7 @@ public class LecturesActivity extends AppCompatActivity {
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        heading.setText("Dashboard");
+        heading.setText("Lecture For Today");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }
