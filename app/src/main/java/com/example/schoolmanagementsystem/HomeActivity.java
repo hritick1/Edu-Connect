@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +36,11 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
@@ -43,6 +50,9 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         heading.setText("Dashboard");
         getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
         ids();  //setting up ids for buttons
 
     }
