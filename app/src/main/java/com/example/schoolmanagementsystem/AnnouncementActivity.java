@@ -37,8 +37,8 @@ public class AnnouncementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_announcement);
-        toolbarFxn();
+        setContentView(R.layout.items_announcement);
+//        toolbarFxn();
 
          }
 
