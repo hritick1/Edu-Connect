@@ -3,6 +3,8 @@ package com.example.schoolmanagementsystem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -12,8 +14,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class AnnouncementActivity extends AppCompatActivity {
     TextView heading;
+    RecyclerView recyclerView;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -37,8 +42,40 @@ public class AnnouncementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.items_announcement);
-//        toolbarFxn();
+        setContentView(R.layout.activity_announcement);
+        toolbarFxn();
+        recyclerView=findViewById(R.id.announcementRec);
+        ArrayList<Data_Announcement> list=new ArrayList<>();
+        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));
+        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));
+        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));
+        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
+                " of me that is hritick enjoy","25-July-2022"));
+
+        Adapter_Announcement adapter_announcement=new Adapter_Announcement(list,getApplicationContext());
+    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    recyclerView.setAdapter(adapter_announcement);
 
          }
 
