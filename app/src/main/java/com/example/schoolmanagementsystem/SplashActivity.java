@@ -18,12 +18,17 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbarFxn();
+
+
+    }
+
+    private void toolbarFxn() {
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         heading.setText("SplashActivity");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-
     }
 }
