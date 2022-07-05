@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
+
 public class HomeActivity extends AppCompatActivity {
     TextView heading;
     Button announcements,lectures,attendance,assignments,exams,results;
@@ -75,13 +78,13 @@ public class HomeActivity extends AppCompatActivity {
     public void clicked(View view) {
         switch(view.getId()){
             case R.id.announcement:
-                startActivity(new Intent(getApplicationContext(),AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
                 break;
             case R.id.lectures:
                 startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(),AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));

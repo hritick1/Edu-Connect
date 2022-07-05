@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.announcement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.R;
+
 import java.util.ArrayList;
 
 public class AnnouncementActivity extends AppCompatActivity {
@@ -22,7 +24,7 @@ public class AnnouncementActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.logout){
+        if(item.getItemId()== R.id.logout){
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

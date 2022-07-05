@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.announcement;
 
 public class Data_Announcement {
     public Data_Announcement(String topic, String subject, String date) {
