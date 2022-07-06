@@ -56,7 +56,7 @@ public class AnnouncementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_announcement);
         toolbarFxn();
         dataGet();
-        setRecyclerView();
+
 
 
          }
@@ -73,6 +73,7 @@ public class AnnouncementActivity extends AppCompatActivity {
                     date.add(s.getString("date"));
                     subject.add(s.getString("subject"));
                 }
+                setRecyclerView();
 
             }
         });
