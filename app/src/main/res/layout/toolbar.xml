@@ -16,7 +16,7 @@
         android:textColor="#F5F5F5"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="25dp"
         />
 
 </androidx.appcompat.widget.Toolbar>

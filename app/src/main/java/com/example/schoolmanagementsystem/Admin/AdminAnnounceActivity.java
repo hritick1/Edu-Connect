@@ -2,14 +2,20 @@ package com.example.schoolmanagementsystem.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.R;
@@ -26,13 +32,35 @@ import java.util.Map;
 public class AdminAnnounceActivity extends AppCompatActivity {
 AutoCompleteTextView topic;
 EditText date ,subject,full;
+TextView heading;
 Button upload ,view;
 Map<String,Object> map=new HashMap<String,Object>();
 ArrayList<String> list=new ArrayList<>();
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==R.id.logout){
+            Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_announce);
+        toolbarFxn();
         ids();
         autocomplete();
         upload.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +96,16 @@ ArrayList<String> list=new ArrayList<>();
         topic.setThreshold(1);
         topic.setAdapter(adapter);
     }
-
+    private void toolbarFxn() {
+        heading=findViewById(R.id.toolbarText);   //textview for toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        heading.setText("Create Announcement");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+    }
 
     private void dataBase() {
 map.put("date",date.getText().toString());

@@ -17,21 +17,12 @@
             <include
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"></include>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create Announcement"
-                android:id="@+id/name"
-                android:layout_gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginTop="30dp"></TextView>
+
 
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginLeft="15dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
