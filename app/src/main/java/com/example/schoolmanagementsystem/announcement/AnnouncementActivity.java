@@ -30,6 +30,7 @@ public class AnnouncementActivity extends AppCompatActivity {
     ArrayList<String> topic=new ArrayList<>();
     ArrayList<String> subject=new ArrayList<>();
     ArrayList<String> date=new ArrayList<>();
+    ArrayList<String> full =new ArrayList<>();
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -72,6 +73,7 @@ public class AnnouncementActivity extends AppCompatActivity {
                     topic.add(s.getString("topic"));
                     date.add(s.getString("date"));
                     subject.add(s.getString("subject"));
+                    full.add(s.getString("full"));
                 }
                 setRecyclerView();
 
@@ -83,9 +85,8 @@ public class AnnouncementActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.announcementRec);
         ArrayList<Data_Announcement> list=new ArrayList<>();
         for(int i=0;i<topic.size();i++){
-            list.add(new Data_Announcement(topic.get(i),subject.get(i),date.get(i)));
+            list.add(new Data_Announcement(topic.get(i),subject.get(i),date.get(i),full.get(i)));
         }
-        list.add(new Data_Announcement("Kokon","ghhg","gghh"));
         Adapter_Announcement adapter_announcement=new Adapter_Announcement(list,getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter_announcement);

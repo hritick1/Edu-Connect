@@ -1,6 +1,7 @@
 package com.example.schoolmanagementsystem.announcement;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,15 @@ holder.date.setText(data.getDate());
 
         @Override
         public void onClick(View view) {
-
+            Intent i = new Intent().setClass(context, ViewAnnounceActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+            int pos=this.getAdapterPosition();
+            Data_Announcement data=list.get(pos);
+            i.putExtra("subject",data.getSubject());
+            i.putExtra("date",data.getDate());
+            i.putExtra("full",data.getFull());
+// Launch the new activity and add the additional flags to the intent
+            context.startActivity(i);
         }
     }
 }
