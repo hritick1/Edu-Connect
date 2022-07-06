@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -84,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));
@@ -93,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),ExaminationActivity.class));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(),AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();

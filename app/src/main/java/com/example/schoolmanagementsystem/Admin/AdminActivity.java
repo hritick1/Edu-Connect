@@ -70,7 +70,7 @@ TextView heading;
                 startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
