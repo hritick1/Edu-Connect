@@ -1,6 +1,7 @@
 package com.example.schoolmanagementsystem.announcement;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,12 +16,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.R;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class AnnouncementActivity extends AppCompatActivity {
     TextView heading;
     RecyclerView recyclerView;
+    ArrayList<String> topic=new ArrayList<>();
+    ArrayList<String> subject=new ArrayList<>();
+    ArrayList<String> date=new ArrayList<>();
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -46,42 +55,40 @@ public class AnnouncementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcement);
         toolbarFxn();
-        recyclerView=findViewById(R.id.announcementRec);
-        ArrayList<Data_Announcement> list=new ArrayList<>();
-        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));
-        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));
-        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));
-        list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));    list.add(new Data_Announcement("Holiday","We will be getting holiday as its birthday" +
-                " of me that is hritick enjoy","25-July-2022"));
+        dataGet();
+        setRecyclerView();
 
-        Adapter_Announcement adapter_announcement=new Adapter_Announcement(list,getApplicationContext());
-    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-    recyclerView.setAdapter(adapter_announcement);
 
          }
 
+    private void dataGet() {
+        FirebaseFirestore.getInstance().collection("Announcement").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                topic.clear();
+                date.clear();
+                subject.clear();
+                for(DocumentSnapshot s: value){
+                    topic.add(s.getString("topic"));
+                    date.add(s.getString("date"));
+                    subject.add(s.getString("subject"));
+                }
 
+            }
+        });
+    }
+
+    private void setRecyclerView() {
+        recyclerView=findViewById(R.id.announcementRec);
+        ArrayList<Data_Announcement> list=new ArrayList<>();
+        for(int i=0;i<topic.size();i++){
+            list.add(new Data_Announcement(topic.get(i),subject.get(i),date.get(i)));
+        }
+        list.add(new Data_Announcement("Kokon","ghhg","gghh"));
+        Adapter_Announcement adapter_announcement=new Adapter_Announcement(list,getApplicationContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(adapter_announcement);
+    }
 
 
     private void toolbarFxn() {

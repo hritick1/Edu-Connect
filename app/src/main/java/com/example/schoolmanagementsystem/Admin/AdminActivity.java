@@ -41,7 +41,7 @@ TextView heading;
     public void clicked(View view) {
         switch (view.getId()) {
             case R.id.announcement:
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
                 startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
