@@ -4,14 +4,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
+import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
+
 public class HomeActivity extends AppCompatActivity {
     TextView heading;
+    Button announcements,lectures,attendance,assignments,exams,results;
+
+//    menu button
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -28,13 +40,70 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        heading=findViewById(R.id.toolbarText);
+
+        toolbarFxn();
+        ids();  //setting up ids for buttons
+
+    }
+
+
+
+    private void toolbarFxn() {
+        heading=findViewById(R.id.toolbarText);   //textview for toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         heading.setText("Dashboard");
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
     }
+
+    private void ids() {
+        announcements=findViewById(R.id.announcement);
+        lectures=findViewById(R.id.lectures);
+        attendance=findViewById(R.id.attendance);
+        assignments=findViewById(R.id.assignment);
+        exams=findViewById(R.id.exam);
+        results=findViewById(R.id.result);
+    }
+
+    public void clicked(View view) {
+        switch(view.getId()){
+            case R.id.announcement:
+                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                break;
+            case R.id.lectures:
+                startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
+                break;
+            case R.id.attendance:
+                startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
+                break;
+            case R.id.assignment:
+                startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));
+                break;
+            case R.id.exam:
+                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
+                break;
+            case R.id.result:
+                startActivity(new Intent(getApplicationContext(),ResultsActivity.class));
+                break;
+            default:
+                Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+        }
+
+
+
 }

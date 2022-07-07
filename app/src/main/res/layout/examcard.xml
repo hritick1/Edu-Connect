@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="160dp">
+
+    <LinearLayout
+        android:background="#0C274E"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Exam Name: "
+                android:drawablePadding="10sp"
+                android:drawableLeft="@drawable/ic_baseline_event_note_24"
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NAME"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:id="@+id/name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type of the Exam:"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textColor="@color/white"
+                android:id="@+id/type"
+                android:layout_marginTop="5sp"
+                android:text="TYPE"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platform of Exam: "
+                android:textSize="20sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLATFORM"
+                android:textColor="@color/white"
+                android:id="@+id/platform"
+                android:textSize="20sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="5sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_access_alarms_24"
+                android:drawablePadding="10sp"
+                android:text="Date and Time: "
+                android:textSize="20sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="5sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date_Time"
+                android:id="@+id/dateTime"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="5sp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
