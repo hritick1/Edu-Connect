@@ -91,10 +91,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));
                 break;
             case R.id.exam:
-                startActivity(new Intent(getApplicationContext(),ExaminationActivity.class));
+                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
+                startActivity(new Intent(getApplicationContext(),ResultsActivity.class));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
     <LinearLayout
-
-        android:backgroundTint="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
         android:padding="10dp"
+        android:background="#0C274E"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="12dp"
@@ -21,23 +17,24 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Subject"
-                android:textSize="19sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:background="@color/black"
                 android:id="@+id/subject"></TextView>
             <TextView
                 android:layout_marginLeft="30dp"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
                 android:text="Grade: A"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:background="@color/purple_700"
                 android:id="@+id/grade"></TextView>
             <TextView
                 android:layout_marginLeft="30dp"
@@ -47,16 +44,15 @@
                 android:text="5-July-2022"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:id="@+id/date"></TextView>
 
         </LinearLayout>
         <LinearLayout
-            android:backgroundTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="6dp"
@@ -65,10 +61,9 @@
                 android:layout_height="wrap_content"
                 android:text="Marks Scored: 25/50"
                 android:textSize="20sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:id="@+id/marks"></TextView>
 
         </LinearLayout>
 
     </LinearLayout>
-</androidx.cardview.widget.CardView>

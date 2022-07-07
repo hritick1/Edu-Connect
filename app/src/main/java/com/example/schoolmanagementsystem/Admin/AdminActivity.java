@@ -79,7 +79,7 @@ TextView heading;
                 startActivity(new Intent(getApplicationContext(), ExaminationActivity.class));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();

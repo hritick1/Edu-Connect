@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
 
     <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
+    android:background="#0C274E"
         android:orientation="vertical"
+    android:padding="10dp"
         android:layout_marginTop="12dp"
         android:layout_height="wrap_content">
 
@@ -18,23 +18,24 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Subject"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:background="@color/black"
                 android:id="@+id/subject"></TextView>
             <TextView
                 android:layout_marginLeft="30dp"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
                 android:text="Present"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/black"
+                android:background="@color/purple_700"
+                android:textSize="22sp"
+                android:textColor="@color/white"
                 android:id="@+id/attendance"></TextView>
             <TextView
                 android:layout_marginLeft="30dp"
@@ -43,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:text="5-July-2022"
                 android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textColor="@color/white"
                 android:id="@+id/date"></TextView>
 
         </LinearLayout>
@@ -52,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="6dp"
@@ -60,10 +61,9 @@
                 android:layout_height="wrap_content"
                 android:text="Topic: "
                 android:textSize="18sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:id="@+id/topic"></TextView>
 
         </LinearLayout>
 
     </LinearLayout>
-</androidx.cardview.widget.CardView>
