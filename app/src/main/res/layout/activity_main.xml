@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SplashActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
 </LinearLayout>

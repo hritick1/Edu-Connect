@@ -2,7 +2,9 @@ package com.example.schoolmanagementsystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -23,10 +25,25 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Password;
     private Button login;
     private Button signup;
+=======
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class LoginActivity extends AppCompatActivity {
+TextView heading;
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+<<<<<<< HEAD
         signup=findViewById(R.id.signup);
         login=findViewById(R.id.login);
         Password=findViewById(R.id.password);
@@ -68,5 +85,21 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
             }
         });
+=======
+        toolbarFxn();
+
+    }
+
+
+
+    private void toolbarFxn() {
+        heading=findViewById(R.id.toolbarText);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        heading.setText("Dashboard");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     }
 }

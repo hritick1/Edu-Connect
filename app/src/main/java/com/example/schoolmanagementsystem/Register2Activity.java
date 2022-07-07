@@ -2,6 +2,7 @@ package com.example.schoolmanagementsystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,10 +22,20 @@ public class Register2Activity extends AppCompatActivity {
     private EditText Address;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     Button submit;
+=======
+import androidx.appcompat.widget.Toolbar;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class Register2Activity extends AppCompatActivity {
+TextView heading;
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
+<<<<<<< HEAD
         name=findViewById(R.id.name);
         mobile=findViewById(R.id.mobile);
         age=findViewById(R.id.age);
@@ -56,5 +67,17 @@ public class Register2Activity extends AppCompatActivity {
                         });
             }
         });
+=======
+        toolbarFxn();
+
+    }
+
+    private void toolbarFxn() {
+        heading=findViewById(R.id.toolbarText);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        heading.setText("Dashboard");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     }
 }

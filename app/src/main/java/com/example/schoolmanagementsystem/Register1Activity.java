@@ -2,9 +2,11 @@ package com.example.schoolmanagementsystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -23,10 +25,17 @@ public class Register1Activity extends AppCompatActivity {
     private EditText pass;
     private Button reg;
     private FirebaseAuth auth;
+=======
+import android.widget.TextView;
+
+public class Register1Activity extends AppCompatActivity {
+TextView heading;
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
+<<<<<<< HEAD
 
         email=findViewById(R.id.email);
 
@@ -67,5 +76,24 @@ public class Register1Activity extends AppCompatActivity {
                     Toast.makeText(Register1Activity.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
+=======
+        toolbarFxn();
+
+    }
+
+
+
+
+
+
+
+    private void toolbarFxn() {
+
+        heading=findViewById(R.id.toolbarText);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        heading.setText("Dashboard");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     }
 }

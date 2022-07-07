@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context=".announcement.ViewAnnounceActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="The thing is that we all should be focused of things as we all will do thhhj"
+        android:id="@+id/subject"
+
+        android:layout_gravity="center"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="25-July-2022"
+        android:background="@color/white"
+        android:id="@+id/date"
+        android:layout_gravity="left"
+        android:textSize="18dp"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+     ></TextView>
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="The thing is that we all should be focused of things as we all will do thhhj"
+        android:id="@+id/full"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"></TextView>
+
+</LinearLayout>

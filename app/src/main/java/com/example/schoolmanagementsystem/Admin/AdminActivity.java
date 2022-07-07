@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,15 +15,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.AdminActivity;
-import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
+import com.example.schoolmanagementsystem.AssignmentActivity;
+import com.example.schoolmanagementsystem.ExaminationActivity;
+import com.example.schoolmanagementsystem.LecturesActivity;
+import com.example.schoolmanagementsystem.R;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
 
-public class HomeActivity extends AppCompatActivity {
-    TextView heading;
+public class AdminActivity extends AppCompatActivity {
+TextView heading;
     Button announcements,lectures,attendance,assignments,exams,results;
-
-//    menu button
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -47,26 +47,11 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_admin);
 
         toolbarFxn();
         ids();  //setting up ids for buttons
-
     }
-
-
-
-    private void toolbarFxn() {
-        heading=findViewById(R.id.toolbarText);   //textview for toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        heading.setText("Dashboard");
-        getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-    }
-
     private void ids() {
         announcements=findViewById(R.id.announcement);
         lectures=findViewById(R.id.lectures);
@@ -77,33 +62,39 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void clicked(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.announcement:
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
+                startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));
+                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
                 break;
             case R.id.exam:
-                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
+                startActivity(new Intent(getApplicationContext(), ExaminationActivity.class));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(),ResultsActivity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();
         }
+    }
 
 
-
-        }
-
-
-
+        private void toolbarFxn() {
+        heading=findViewById(R.id.toolbarText);   //textview for toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        heading.setText("Dashboard");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+    }
 }
