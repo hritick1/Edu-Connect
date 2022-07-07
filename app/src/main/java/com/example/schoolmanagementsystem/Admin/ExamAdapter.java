@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.admin;
+package com.example.schoolmanagementsystem.Admin;
 
 import android.view.LayoutInflater;
 import android.view.View;

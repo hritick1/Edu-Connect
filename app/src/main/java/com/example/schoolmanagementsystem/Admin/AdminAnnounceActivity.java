@@ -39,7 +39,7 @@ ArrayList<String> list=new ArrayList<>();
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.logout){
+        if(item.getItemId()== R.id.logout){
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

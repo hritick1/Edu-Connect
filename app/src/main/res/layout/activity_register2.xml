@@ -5,16 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
+
     android:background="@drawable/newbg"
     android:orientation="vertical"
-    tools:context=".Register2">
-=======
     tools:context=".Register2Activity">
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
->>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
+        layout="@layout/toolbar">
+
+    </include>
 
     <ImageView
         android:layout_width="120dp"

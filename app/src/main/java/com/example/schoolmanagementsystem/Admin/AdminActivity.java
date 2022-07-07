@@ -64,7 +64,7 @@ TextView heading;
     public void clicked(View view) {
         switch (view.getId()) {
             case R.id.announcement:
-                startActivity(new Intent(getApplicationContext(), AdminAnnounceActivity.class));
+                startActivity(new Intent(AdminActivity.this, AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
                 startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
@@ -75,8 +75,8 @@ TextView heading;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
                 break;
-            case R.id.exam:
-                startActivity(new Intent(getApplicationContext(), ExaminationActivity.class));
+            case R.id.exams:
+                startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class));
                 break;
             case R.id.result:
                 startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class));

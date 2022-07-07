@@ -20,7 +20,9 @@
         android:textSize="23dp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="40dp"></TextView>
+        android:layout_marginTop="40dp">
+
+    </TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,8 +34,8 @@
         android:textSize="18dp"
         android:layout_marginTop="-2dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-     ></TextView>
+        android:textColor="@color/black">
+    </TextView>
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="60dp"></TextView>
+        android:layout_marginTop="60dp">
+    </TextView>
 
 </LinearLayout>

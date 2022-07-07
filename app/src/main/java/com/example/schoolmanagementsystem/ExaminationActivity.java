@@ -1,13 +1,11 @@
 package com.example.schoolmanagementsystem;
 
-import static android.icu.lang.UCharacter.DecompositionType.VERTICAL;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
@@ -18,8 +16,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.admin.ExamAdapter;
-import com.example.schoolmanagementsystem.admin.ExamData;
+import com.example.schoolmanagementsystem.Admin.ExamAdapter;
+import com.example.schoolmanagementsystem.Admin.ExamData;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;

@@ -8,14 +8,13 @@
     android:padding="20dp"
     android:background="@drawable/newbg"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MainActivity">
-=======
     tools:context=".Register1Activity">
+
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
->>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
+        layout="@layout/toolbar">
+
+    </include>
 
     <ImageView
         android:layout_width="120dp"

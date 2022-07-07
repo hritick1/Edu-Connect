@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Admin.AdminAnnounceActivity">
+    tools:context=".Admin.AdminExamsActivity">
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,27 +20,10 @@
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"/>
 
-
-            <AutoCompleteTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:layout_marginLeft="15dp"
-                android:minHeight="48dp"
-                android:background="@color/white"
-                android:textColorHint="@color/black"
-                android:gravity="center"
-                android:backgroundTint="@color/white"
-                android:layout_marginRight="20dp"
-                android:hint="Enter Announcement Heading"
-                android:textSize="20sp"
-                android:id="@+id/topic"
-                />
-
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="75dp"
                 android:layout_marginLeft="15dp"
                 android:textColorHint="@color/black"
                 android:minHeight="48dp"
@@ -46,14 +31,14 @@
                 android:gravity="center"
                 android:backgroundTint="@color/white"
                 android:layout_marginRight="20dp"
-                android:hint="Enter Announcement Date"
+                android:hint="Enter Exam Name"
                 android:textSize="20sp"
-                android:id="@+id/date"/>
+                android:id="@+id/examName"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="55dp"
                 android:layout_marginLeft="17dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
@@ -62,14 +47,14 @@
                 android:gravity="center"
                 android:backgroundTint="@color/white"
                 android:layout_marginRight="20dp"
-                android:hint="Enter Announcement Topic"
+                android:hint="Enter Type of Exam"
                 android:textSize="20sp"
-                android:id="@+id/subject"/>
+                android:id="@+id/examtype"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="55dp"
                 android:layout_marginLeft="17dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
@@ -78,15 +63,32 @@
                 android:gravity="center"
                 android:backgroundTint="@color/white"
                 android:layout_marginRight="20dp"
-                android:hint="Enter Full Announcement "
+                android:hint="Enter the Platform "
                 android:textSize="20sp"
-                android:id="@+id/full"/>
+                android:id="@+id/platform"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginLeft="17dp"
+                android:minHeight="48dp"
+                android:background="@color/white"
+                android:textColorHint="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:backgroundTint="@color/white"
+                android:layout_marginRight="20dp"
+                android:hint="Enter the Date and time "
+                android:textSize="20sp"
+                android:id="@+id/datetime"/>
 
             <Button
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="50dp"
                 android:id="@+id/upload"
                 android:text="Upload"
                 android:textStyle="bold"
@@ -102,6 +104,7 @@
                 android:textStyle="bold"
                 android:textColor="#f5f5f5"
                 android:textSize="15dp"
+                android:layout_marginTop="35dp"
                 android:backgroundTint="#0C274E"/>
         </LinearLayout>
 

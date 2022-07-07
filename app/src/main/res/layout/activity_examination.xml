@@ -9,15 +9,10 @@
     android:background="@drawable/newbg"
     tools:context=".ExaminationActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="35dp"
-        android:text="Exams Available"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/white"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
