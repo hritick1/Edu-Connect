@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,16 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.os.Bundle;
-import android.widget.TextView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -30,18 +25,25 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Password;
     private Button login;
     private Button signup;
+=======
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.widget.TextView;
 
-    TextView heading;
+public class LoginActivity extends AppCompatActivity {
+TextView heading;
     @Override
     public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        toolbarFxn();
+<<<<<<< HEAD
         signup=findViewById(R.id.signup);
         login=findViewById(R.id.login);
         Password=findViewById(R.id.password);
@@ -83,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
             }
         });
+=======
+        toolbarFxn();
 
     }
 
@@ -96,6 +100,6 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     }
 }

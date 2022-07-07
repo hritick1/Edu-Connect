@@ -6,14 +6,15 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.Button;
-
+=======
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
 
 public class SplashActivity extends AppCompatActivity {
     TextView heading;
@@ -24,8 +25,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 
 
+=======
         toolbarFxn();
 
 
@@ -38,5 +41,6 @@ public class SplashActivity extends AppCompatActivity {
         heading.setText("SplashActivity");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
     }
 }

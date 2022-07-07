@@ -6,8 +6,15 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@drawable/newbg"
+    tools:context=".Examination">
+=======
     tools:context=".ExaminationActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+>>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
 
     <TextView
         android:layout_width="match_parent"
