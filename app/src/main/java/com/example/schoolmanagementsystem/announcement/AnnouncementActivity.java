@@ -69,6 +69,7 @@ public class AnnouncementActivity extends AppCompatActivity {
                 topic.clear();
                 date.clear();
                 subject.clear();
+full.clear();
                 for(DocumentSnapshot s: value){
                     topic.add(s.getString("topic"));
                     date.add(s.getString("date"));
