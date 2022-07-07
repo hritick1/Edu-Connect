@@ -10,7 +10,9 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="18dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/arrow_right_24"></ImageView>
+        android:src="@drawable/arrow_right_24">
+
+    </ImageView>
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -32,7 +34,9 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:background="#FF0A0A"
-                android:id="@+id/topic"></TextView>
+                android:id="@+id/topic">
+
+            </TextView>
             <TextView
                 android:layout_marginLeft="30dp"
                 android:layout_gravity="center"
@@ -41,7 +45,9 @@
                 android:text="5-July-2022"
                 android:textSize="15sp"
                 android:textColor="@color/black"
-                android:id="@+id/date"></TextView>
+                android:id="@+id/date">
+
+            </TextView>
 
         </LinearLayout>
         <LinearLayout

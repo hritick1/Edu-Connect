@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/drawable/ic_baseline_access_alarms_24.xml" value="0.1035" />
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/drawable/ic_baseline_event_note_24.xml" value="0.1035" />
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/activity_examination.xml" value="0.1796875" />
@@ -11,38 +10,12 @@
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/activity_register1.xml" value="0.1796875" />
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/activity_register2.xml" value="0.1796875" />
+        <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/activity_view_announce.xml" value="0.1796875" />
         <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/examcard.xml" value="0.22" />
-=======
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/announcement_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/arrow_right_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/assignments_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/attendance_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/exams_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/lectures_24.xml" value="0.173" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/results_24.xml" value="0.173" />
->>>>>>> 63564292da1ed18533170ebfa6faaa68de04b6df
+        <entry key="..\:/Users/NIPUN SINGH/Documents/GitHub/School-Management-System/app/src/main/res/layout/items_announcement.xml" value="0.22" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_announce.xml" value="0.264" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_attend.xml" value="0.264" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_result.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_announcement.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_assignment.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_attendance.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_examination.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_lectures.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_main.xml" value="0.21851851851851853" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_register1.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_register2.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_results.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_results_admin.xml" value="0.2604166666666667" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_view_announce.xml" value="0.2604166666666667" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_announcement.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_attendance.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_result.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/toolbar.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/menu/menu.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>
