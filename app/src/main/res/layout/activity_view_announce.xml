@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="The thing is that we all should be focused of things as we all will do thhhj"
+        android:text="The thing is that we all should be focused of things as we all will do this"
         android:id="@+id/subject"
 
         android:layout_gravity="center"
@@ -37,7 +37,7 @@
     <TextView
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="The thing is that we all should be focused of things as we all will do thhhj"
+        android:text="The thing is that we all should be focused of things as we all will do this"
         android:id="@+id/full"
         android:layout_gravity="center"
         android:textSize="20dp"
