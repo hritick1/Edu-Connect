@@ -20,7 +20,7 @@
             android:name=".Admin.Admin_Result_Activity"
             android:exported="false" />
         <activity
-            android:name=".ResultsActivity"
+            android:name=".Results.ResultsActivity"
             android:exported="false" />
         <activity
             android:name=".Admin.Admin_Attend_Activity"
@@ -45,7 +45,7 @@
             android:name=".AssignmentActivity"
             android:exported="false" />
         <activity
-            android:name=".ExaminationActivity"
+            android:name=".Examination.ExaminationActivity"
             android:exported="false" />
         <activity
             android:name=".announcement.AnnouncementActivity"
@@ -54,13 +54,13 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Register2Activity"
+            android:name=".signin.Register2Activity"
             android:exported="false" />
         <activity
-            android:name=".Register1Activity"
+            android:name=".signin.Register1Activity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".signin.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

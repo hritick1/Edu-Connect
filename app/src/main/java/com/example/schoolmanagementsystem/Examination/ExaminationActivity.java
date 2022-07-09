@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.Examination;
 
 
 import androidx.annotation.Nullable;
@@ -16,9 +16,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.ExamAdapter;
-import com.example.schoolmanagementsystem.Admin.ExamData;
-import com.example.schoolmanagementsystem.Attendance.Data_Attendance;
+import com.example.schoolmanagementsystem.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,7 +40,7 @@ public class ExaminationActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.logout){
+        if(item.getItemId()== R.id.logout){
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

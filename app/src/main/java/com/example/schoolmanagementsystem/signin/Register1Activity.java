@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.signin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import android.widget.TextView;
+
+import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -63,7 +65,7 @@ public class Register1Activity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(Register1Activity.this, "Successful", Toast.LENGTH_SHORT).show();
-                    Intent i2=new Intent(Register1Activity.this,Register2Activity.class);
+                    Intent i2=new Intent(Register1Activity.this, Register2Activity.class);
                     startActivity(i2);
                 }
                 else

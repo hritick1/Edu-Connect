@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.signin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
@@ -46,13 +49,15 @@ TextView heading;
                 map.put("Mobile No.",mobile.getText().toString());
                 map.put("Age",age.getText().toString());
                 map.put("Address",Address.getText().toString());
+                map.put("id",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                map.put("isUser","1");
 
                 db.collection("Student Entry").add(map)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Toast.makeText(Register2Activity.this, "Registration Successful!\n Log in To Continue", Toast.LENGTH_SHORT).show();
-                                Intent I=new Intent(Register2Activity.this,LoginActivity.class);
+                                Intent I=new Intent(Register2Activity.this, LoginActivity.class);
                                 startActivity(I);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
