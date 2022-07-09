@@ -51,7 +51,7 @@ TextView heading;
                 String UserId=RegistrationNo.getText().toString();
                 HashMap<String,Object> map=new HashMap<>();
                 map.put("Name",name.getText().toString());
-                map.put("Mobile No.",mobile.getText().toString());
+                map.put("Mobile No",mobile.getText().toString());
                 map.put("Age",age.getText().toString());
                 map.put("Address",Address.getText().toString());
                 map.put("User",user);

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".AdminMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin.AdminExamsActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,6 @@
         <activity
             android:name=".Admin.Admin_Attend_Activity"
             android:exported="false" />
-
         <activity
             android:name=".Attendance.AttendanceActivity"
             android:exported="false" />
