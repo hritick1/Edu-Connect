@@ -80,11 +80,11 @@ public class Register1Activity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(Register1Activity.this, "User Created!", Toast.LENGTH_SHORT).show();
                             userId=auth.getCurrentUser().getUid();
-                            DocumentReference documentReference=db.collection("Student Entry").document(userId);
+                            DocumentReference documentReference=db.collection("Students").document(userId);
 
                             HashMap<String,Object> map=new HashMap<>();
                             map.put("Name",name.getText().toString());
-                            map.put("Mobile no.",mobile.getText().toString());
+                            map.put("Mobile no",mobile.getText().toString());
                             map.put("Age",age.getText().toString());
                             map.put("Address",Address.getText().toString());
                             map.put("Id",userId);
