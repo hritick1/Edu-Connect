@@ -1,6 +1,5 @@
 package com.example.schoolmanagementsystem;
 
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -101,7 +100,6 @@ public class ExaminationActivity extends AppCompatActivity {
             }
         });
     }
-
     private void toolbarFxn() {
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

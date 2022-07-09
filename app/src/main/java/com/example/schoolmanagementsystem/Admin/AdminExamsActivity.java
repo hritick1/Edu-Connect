@@ -32,7 +32,6 @@ public class AdminExamsActivity extends AppCompatActivity {
     EditText ExamName,type,examPlatform,dateTime;
     Button viewUser,Upload;
     Map<String,Object> map=new HashMap<>();
-   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
