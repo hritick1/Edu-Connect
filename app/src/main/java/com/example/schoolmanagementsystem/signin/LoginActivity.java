@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.signin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.HomeActivity;
+import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i1=new Intent(LoginActivity.this,Register1Activity.class);
+                Intent i1=new Intent(LoginActivity.this, Register1Activity.class);
                 startActivity(i1);
             }
         });
@@ -85,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    Intent I=new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(I);
                 }
                 else
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
