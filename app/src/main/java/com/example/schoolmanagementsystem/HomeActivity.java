@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminMainActivity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));

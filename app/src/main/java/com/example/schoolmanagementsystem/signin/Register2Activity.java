@@ -46,7 +46,7 @@ TextView heading;
             public void onClick(View view) {
                 HashMap<String,Object> map=new HashMap<>();
                 map.put("Name",name.getText().toString());
-                map.put("Mobile No.",mobile.getText().toString());
+                map.put("Mobile No",mobile.getText().toString());
                 map.put("Age",age.getText().toString());
                 map.put("Address",Address.getText().toString());
                 map.put("id",FirebaseAuth.getInstance().getCurrentUser().getUid());
