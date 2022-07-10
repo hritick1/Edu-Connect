@@ -56,9 +56,6 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".signin.Register2Activity"
-            android:exported="false" />
-        <activity
             android:name=".signin.Register1Activity"
             android:exported="false" />
         <activity
