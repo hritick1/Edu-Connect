@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.Admin.AdminActivity;
 import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
 import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
 import com.example.schoolmanagementsystem.Results.ResultsActivity;
@@ -107,7 +108,7 @@ for(DocumentSnapshot s:value){
                 startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AdminMainActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));

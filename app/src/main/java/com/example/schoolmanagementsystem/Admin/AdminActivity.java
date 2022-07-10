@@ -71,7 +71,7 @@ TextView heading;
                 startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminAssignmentActivity.class));
                 break;
             case R.id.exams:
                 startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class));

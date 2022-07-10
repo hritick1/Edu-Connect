@@ -38,7 +38,7 @@ public class AdminAssignmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_exams);
+        setContentView(R.layout.activity_admin_assignment);
         toolbarFxn();
         ID();
         Upload.setOnClickListener(new View.OnClickListener() {
