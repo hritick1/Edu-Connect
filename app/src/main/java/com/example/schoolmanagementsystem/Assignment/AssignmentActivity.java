@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.Assignment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +15,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.AssignmentAdapter;
-import com.example.schoolmanagementsystem.Admin.AssignmentData;
+import com.example.schoolmanagementsystem.Assignment.AssignmentAdapter;
+import com.example.schoolmanagementsystem.Assignment.AssignmentData;
 
-import com.example.schoolmanagementsystem.Admin.ExamAdapter;
-import com.example.schoolmanagementsystem.Admin.ExamData;
+
+import com.example.schoolmanagementsystem.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -59,21 +59,22 @@ public class AssignmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_examination);
+        setContentView(R.layout.activity_assignment);
 
         toolbarFxn();
         getData();
 
     }
     private void setRecyclerView(){
-        recyclerView=(RecyclerView) findViewById(R.id.assignrecycler);
-        layoutManager=new LinearLayoutManager(this);
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView=findViewById(R.id.assignrecycler);
+//        layoutManager=new LinearLayoutManager(this);
+//        layoutManager.setOrientation(RecyclerView.VERTICAL);
+
         for(int i=0;i<assignment.size();i++){
             assignmentDataArrayList.add(new AssignmentData(assignment.get(i),subject.get(i)));
         }
         AssignmentAdapter adapter=new AssignmentAdapter(assignmentDataArrayList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

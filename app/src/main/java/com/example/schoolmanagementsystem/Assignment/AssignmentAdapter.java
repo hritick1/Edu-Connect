@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.Admin;
+package com.example.schoolmanagementsystem.Assignment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,7 @@ import com.example.schoolmanagementsystem.R;
 import java.util.ArrayList;
 
 public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.ViewHolder>{
-    ArrayList<AssignmentData> assignmentData;
+    ArrayList<AssignmentData> assignmentData= new ArrayList<>();
 
     public AssignmentAdapter(ArrayList<AssignmentData> assignmentData){
         this.assignmentData=assignmentData;

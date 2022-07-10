@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.Admin;
+package com.example.schoolmanagementsystem.Assignment;
 
 public class AssignmentData {
     String assignment;

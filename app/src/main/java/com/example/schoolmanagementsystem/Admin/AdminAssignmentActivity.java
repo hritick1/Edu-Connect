@@ -16,7 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.schoolmanagementsystem.ExaminationActivity;
+
+import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
+import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
 import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -52,7 +54,7 @@ public class AdminAssignmentActivity extends AppCompatActivity {
         viewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminAssignmentActivity.this, ExaminationActivity.class));
+                startActivity(new Intent(AdminAssignmentActivity.this, AssignmentActivity.class));
             }
         });
     }
@@ -90,7 +92,7 @@ public class AdminAssignmentActivity extends AppCompatActivity {
         map.put("Assignment", Assignment.getText().toString());
         map.put("Subject", subject.getText().toString());
 
-        FirebaseFirestore.getInstance().collection("Examination").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection("Assignment").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if(task.isSuccessful()) {

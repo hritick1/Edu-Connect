@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:orientation="vertical"
-    tools:context=".AssignmentActivity">
+    tools:context=".Assignment.AssignmentActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/assignrecycler"/>
+        android:id="@+id/assignrecycler"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

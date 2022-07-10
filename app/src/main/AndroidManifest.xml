@@ -44,7 +44,7 @@
             android:name=".LecturesActivity"
             android:exported="false" />
         <activity
-            android:name=".AssignmentActivity"
+            android:name=".Assignment.AssignmentActivity"
             android:exported="false" />
         <activity
             android:name=".Examination.ExaminationActivity"
