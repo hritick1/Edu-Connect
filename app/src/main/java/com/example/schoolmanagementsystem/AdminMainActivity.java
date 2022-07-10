@@ -61,7 +61,7 @@ public class AdminMainActivity extends AppCompatActivity {
         dataGet();
     }
     private void dataGet() {
-        FirebaseFirestore.getInstance().collection("Student Entry").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection("Students").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 name.clear();

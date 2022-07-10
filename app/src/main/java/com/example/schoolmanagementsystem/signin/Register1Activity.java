@@ -80,30 +80,30 @@ public class Register1Activity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(Register1Activity.this, "User Created!", Toast.LENGTH_SHORT).show();
                             userId=auth.getCurrentUser().getUid();
-                            DocumentReference documentReference=db.collection("Students").document(userId);
 
                             HashMap<String,Object> map=new HashMap<>();
                             map.put("Name",name.getText().toString());
-                            map.put("Mobile no",mobile.getText().toString());
+                            FirebaseFirestore.getInstance().collection(userId).add(map);
+                            map.put("Mobile No",mobile.getText().toString());
                             map.put("Age",age.getText().toString());
                             map.put("Address",Address.getText().toString());
                             map.put("Id",userId);
-                            map.put("user",1);
+                            map.put("isUser",1);
+FirebaseFirestore.getInstance().collection("Students").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+    @Override
+    public void onSuccess(DocumentReference documentReference) {
 
-                            documentReference.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
+        Toast.makeText(Register1Activity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
 
-                                    Toast.makeText(Register1Activity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Register1Activity.this,LoginActivity.class));
+    }
+}).addOnFailureListener(new OnFailureListener() {
+    @Override
+    public void onFailure(@NonNull Exception e) {
+        Toast.makeText(Register1Activity.this, "Registration Failed!", Toast.LENGTH_SHORT).show();
 
-                                    startActivity(new Intent(Register1Activity.this,LoginActivity.class));
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(Register1Activity.this, "Registration Failed!", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+    }
+});
 
                         }
                     }
