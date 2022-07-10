@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -12,14 +13,19 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.signin.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class AssignmentActivity extends AppCompatActivity {
     TextView heading;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(item.getItemId()==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
-        }
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            finish();        }
         return super.onOptionsItemSelected(item);
     }
 
