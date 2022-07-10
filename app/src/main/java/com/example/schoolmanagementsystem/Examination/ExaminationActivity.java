@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -70,7 +71,9 @@ public class ExaminationActivity extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
+
         for(int i=0;i<examName.size();i++){
+            if(examName.get(i)!=null && platform.get(i)!=null && type.get(i)!=null && dateTime.get(i)!=null)
             examDataArrayList.add(new ExamData(examName.get(i),platform.get(i),
                     type.get(i),dateTime.get(i)));
         }
@@ -80,7 +83,7 @@ public class ExaminationActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        FirebaseFirestore.getInstance().collection("Examination").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 examName.clear();

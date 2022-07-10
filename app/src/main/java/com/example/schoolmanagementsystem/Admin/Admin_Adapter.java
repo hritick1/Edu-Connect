@@ -1,20 +1,16 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.Admin;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.contentcapture.ContentCaptureCondition;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.schoolmanagementsystem.Admin.AdminActivity;
-import com.example.schoolmanagementsystem.Admin.admin_data;
-import com.example.schoolmanagementsystem.announcement.Data_Announcement;
-import com.example.schoolmanagementsystem.announcement.ViewAnnounceActivity;
+import com.example.schoolmanagementsystem.R;
 
 import java.util.ArrayList;
 
@@ -66,7 +62,7 @@ public class Admin_Adapter extends RecyclerView.Adapter<Admin_Adapter.ViewHolder
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
             int pos=this.getAdapterPosition();
             admin_data data=list.get(pos);
-            i.putExtra("id",data.getId());
+            i.putExtra("Id",data.getId());
 // Launch the new activity and add the additional flags to the intent
             context.startActivity(i);
         }

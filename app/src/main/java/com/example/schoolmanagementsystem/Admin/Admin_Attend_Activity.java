@@ -30,6 +30,7 @@ import java.util.Map;
 public class Admin_Attend_Activity extends AppCompatActivity {
     TextView heading;
 Button update,view;
+String id;
 EditText subject,date,attendance,topic;
     Map<String,Object> map=new HashMap<String,Object>();
     ArrayList<String> list=new ArrayList<>();
@@ -59,6 +60,7 @@ EditText subject,date,attendance,topic;
         setContentView(R.layout.activity_admin_attend);
         toolbarFxn();
         ids();
+        id=getIntent().getStringExtra("id");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +92,7 @@ startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
         map.put("topic",topic.getText().toString());
         map.put("subject",subject.getText().toString());
         map.put("attendance",attendance.getText().toString());
-        FirebaseFirestore.getInstance().collection("Attendance").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 Toast.makeText(getApplicationContext(), "Update Successfull", Toast.LENGTH_SHORT).show();

@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.schoolmanagementsystem.R;
 import com.example.schoolmanagementsystem.announcement.Adapter_Announcement;
 import com.example.schoolmanagementsystem.announcement.Data_Announcement;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -63,7 +64,7 @@ public class AttendanceActivity extends AppCompatActivity {
 
     }
     private void dataGet() {
-        FirebaseFirestore.getInstance().collection("Attendance").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 topic.clear();
@@ -86,6 +87,7 @@ public class AttendanceActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.attendanceRec);
         ArrayList<Data_Attendance> list=new ArrayList<>();
         for(int i=0;i<topic.size();i++){
+            if(topic.get(i)!=null && subject.get(i)!=null && attendance.get(i)!=null && date.get(i)!=null)
             list.add(new Data_Attendance("Topic: "+topic.get(i),subject.get(i),attendance.get(i),date.get(i)));
         }
         Adapter_Attendance adapter_attendance=new Adapter_Attendance(list);
