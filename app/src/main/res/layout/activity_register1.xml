@@ -68,7 +68,7 @@
         android:textColorHint="@color/black"
         android:background="#60ffffff"
         android:hint="Enter Address"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp" />
 
