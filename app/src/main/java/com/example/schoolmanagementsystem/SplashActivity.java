@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.schoolmanagementsystem.Admin.AdminExamsActivity;
@@ -13,19 +14,33 @@ import com.example.schoolmanagementsystem.Admin.AdminExamsActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        getSupportActionBar().hide();
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+         Thread td = new Thread(){
 
-        btn=findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-            }
-        });
+             public void run(){
+                 try{
+                     sleep(5000);  //Waiting Time
+
+                 }catch (Exception ex){
+                     ex.printStackTrace();
+
+                 }
+                 finally {
+                     Intent intent = new Intent(SplashActivity.this,HomeActivity.class);
+                     startActivity(intent);
+                     finish();
+
+                 }
+             }
+         }; td.start();
+
+
 
     }
 
