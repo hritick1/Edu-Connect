@@ -16,10 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.AssignmentActivity;
-import com.example.schoolmanagementsystem.ExaminationActivity;
 import com.example.schoolmanagementsystem.LecturesActivity;
 import com.example.schoolmanagementsystem.R;
-import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
 
 public class AdminActivity extends AppCompatActivity {
 TextView heading;
@@ -85,7 +83,6 @@ TextView heading;
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();
         }
     }
-
 
         private void toolbarFxn() {
         heading=findViewById(R.id.toolbarText);   //textview for toolbar

@@ -1,6 +1,7 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.signin;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -14,18 +15,28 @@ import android.widget.Toast;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.schoolmanagementsystem.AdminMainActivity;
+import com.example.schoolmanagementsystem.HomeActivity;
+import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
+    private FirebaseFirestore db=FirebaseFirestore.getInstance();
     private EditText Usermail;
     private EditText Password;
     private Button login;
@@ -47,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         Password=findViewById(R.id.password);
         Usermail=findViewById(R.id.useremail);
         auth=FirebaseAuth.getInstance();
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,15 +69,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter the Values!!", Toast.LENGTH_SHORT).show();
                 else
                     Login1(mail,pass);
-
-
             }
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i1=new Intent(LoginActivity.this,Register1Activity.class);
+                Intent i1=new Intent(LoginActivity.this, Register1Activity.class);
                 startActivity(i1);
             }
         });
@@ -75,9 +85,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    Intent I=new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(I);
+                    checkUser(auth.getCurrentUser().getUid());
                 }
                 else
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
@@ -86,16 +96,32 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
-
     private void toolbarFxn() {
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        heading.setText("Dashboard");
+        heading.setText("Login Or Sign-up");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+
+    }
+    private void checkUser(String uid) {
+
+        FirebaseFirestore.getInstance().collection(uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for(DocumentSnapshot s:value){
+                if(s.getString("isAdmin")!=null){
+                    startActivity(new Intent(getApplicationContext(), AdminMainActivity.class));
+                    finish();
+                }
+                else{
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    finish();
+                }}
+            }
+        });
 
     }
 }

@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.schoolmanagementsystem.Admin.AdminExamsActivity;
+import com.example.schoolmanagementsystem.signin.LoginActivity;
 
 
 public class SplashActivity extends AppCompatActivity {

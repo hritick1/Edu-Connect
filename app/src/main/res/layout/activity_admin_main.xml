@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/newbg"
-    tools:context=".Examination.ExaminationActivity">
-
+    android:orientation="vertical"
+    tools:context=".announcement.AnnouncementActivity">
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-
+        layout="@layout/toolbar"></include>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/AdminRec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Rview"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="44dp"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

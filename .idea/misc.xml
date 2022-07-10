@@ -3,28 +3,3 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/assignments_24.xml" value="0.153" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/attendance_24.xml" value="0.153" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/lectures_24.xml" value="0.1585" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/drawable/results_24.xml" value="0.1" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_assignment.xml" value="0.253125" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_exams.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_result.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_announcement.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_assignment.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_attendance.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_examination.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_lectures.xml" value="0.17192982456140352" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/assign.xml" value="0.253125" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/assignmentcard.xml" value="0.253125" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/examcard.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/fragment_friday.xml" value="0.21296296296296297" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_announcement.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vikra/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_attendance.xml" value="0.25416666666666665" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
-</project>

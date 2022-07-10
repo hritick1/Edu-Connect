@@ -10,12 +10,11 @@
     <LinearLayout
         android:background="#0C274E"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
@@ -42,9 +41,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
 
             android:orientation="horizontal">
             <TextView
@@ -54,7 +52,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:layout_marginStart="10sp"
+                android:layout_marginLeft="35sp"
                 android:layout_marginTop="5sp"/>
 
             <TextView
@@ -70,9 +68,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <TextView
@@ -82,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="Platform of Exam: "
                 android:textSize="20sp"
-                android:layout_marginLeft="10sp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="5sp"/>
 
             <TextView
@@ -100,9 +97,8 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -110,22 +106,22 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_access_alarms_24"
-                android:drawablePadding="10sp"
-                android:text="Date and Time: "
-                android:textSize="20sp"
-                android:layout_marginLeft="10sp"
-                android:layout_marginTop="5sp"/>
+                android:drawablePadding="5dp"
+                android:text="Date Time:"
+                android:textSize="19sp"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="3sp"/>
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date_Time"
                 android:id="@+id/dateTime"
-                android:textSize="20sp"
+                android:layout_width="252dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:layout_marginTop="5sp"
+                android:text="Date_Time"
                 android:textColor="@color/white"
-                android:layout_marginStart="10sp"
-                android:layout_marginTop="5sp"/>
+                android:textSize="20sp" />
 
 
         </LinearLayout>

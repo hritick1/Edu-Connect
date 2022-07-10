@@ -1,12 +1,11 @@
 package com.example.schoolmanagementsystem;
 
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -16,8 +15,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.ExamAdapter;
-import com.example.schoolmanagementsystem.Admin.ExamData;
+import com.example.schoolmanagementsystem.Admin.admin_data;
+import com.example.schoolmanagementsystem.announcement.Adapter_Announcement;
+import com.example.schoolmanagementsystem.announcement.Data_Announcement;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,22 +26,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-
-public class ExaminationActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
-    LinearLayoutManager layoutManager;
-    FirebaseFirestore fireStore;
-    ArrayList<ExamData> examDataArrayList=new ArrayList<>();
-    ArrayList<String>  examName=new ArrayList<>();
-    ArrayList<String>  platform=new ArrayList<>();
-    ArrayList<String>  type=new ArrayList<>();
-    ArrayList<String>  dateTime=new ArrayList<>();
-
+public class AdminMainActivity extends AppCompatActivity {
     TextView heading;
+    RecyclerView recyclerView;
+    ArrayList<String> name=new ArrayList<>();
+    ArrayList<String> age=new ArrayList<>();
+    ArrayList<String> mob=new ArrayList<>();
+    ArrayList<String> id =new ArrayList<>();
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.logout){
+        if(item.getItemId()== R.id.logout){
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
@@ -61,48 +56,48 @@ public class ExaminationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_examination);
-
+        setContentView(R.layout.activity_admin_main);
         toolbarFxn();
-        getData();
-
+        dataGet();
     }
-    private void setRecyclerView(){
-        recyclerView=findViewById(R.id.Rview);
-        layoutManager=new LinearLayoutManager(this);
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-
-        ExamAdapter adapter=new ExamAdapter(examDataArrayList);
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-    }
-
-    private void getData() {
-        FirebaseFirestore.getInstance().collection("Exams").addSnapshotListener(new EventListener<QuerySnapshot>() {
+    private void dataGet() {
+        FirebaseFirestore.getInstance().collection("Students").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                examName.clear();
-                type.clear();
-                platform.clear();
-                dateTime.clear();
-
-                for (DocumentSnapshot s:value){
-                    examName.add(s.getString("Exam Name"));
-                    type.add(s.getString("Type"));
-                    platform.add(s.getString("Platform"));
-                    dateTime.add(s.getString("Date_Time"));
+                name.clear();
+                age.clear();
+                mob.clear();
+                id.clear();
+                for(DocumentSnapshot s: value){
+                    name.add(s.getString("Name"));
+                    age.add(s.getString("Age"));
+                    mob.add(s.getString("Mobile No"));
+                    id.add(s.getString("Id"));
                 }
                 setRecyclerView();
+
             }
         });
     }
 
+    private void setRecyclerView() {
+        recyclerView=findViewById(R.id.AdminRec);
+        ArrayList<admin_data> list=new ArrayList<>();
+        for(int i=0;i<name.size();i++){
+            list.add(new admin_data(name.get(i),"Age: "+age.get(i),"Mobile No: "+mob.get(i),id.get(i)));
+        }
+     Admin_Adapter admin_adapter=new Admin_Adapter(list,getApplicationContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(admin_adapter);
+    }
+
+
     private void toolbarFxn() {
+
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        heading.setText("Examination");
+        heading.setText("View Students");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
@@ -110,4 +105,3 @@ public class ExaminationActivity extends AppCompatActivity {
 
     }
 }
-

@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.Admin;
+package com.example.schoolmanagementsystem.Examination;
 
 public class ExamData {
     String ExamName;
