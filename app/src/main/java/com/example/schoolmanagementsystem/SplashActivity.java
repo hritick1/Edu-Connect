@@ -9,23 +9,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.schoolmanagementsystem.Admin.AdminExamsActivity;
+import com.example.schoolmanagementsystem.signin.LoginActivity;
 
 
 public class SplashActivity extends AppCompatActivity {
 
-    Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn=findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-            }
-        });
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
 
     }
 
