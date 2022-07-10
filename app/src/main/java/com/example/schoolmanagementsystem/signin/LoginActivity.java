@@ -17,9 +17,11 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.widget.TextView;
 
+import com.example.schoolmanagementsystem.AdminMainActivity;
 import com.example.schoolmanagementsystem.HomeActivity;
 import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -85,8 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    Intent I=new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(I);
+                    checkUser(auth.getCurrentUser().getUid());
                 }
                 else
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
@@ -103,6 +104,24 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+
+    }
+    private void checkUser(String uid) {
+
+        FirebaseFirestore.getInstance().collection(uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for(DocumentSnapshot s:value){
+                if(s.getString("isAdmin")!=null){
+                    startActivity(new Intent(getApplicationContext(), AdminMainActivity.class));
+                    finish();
+                }
+                else{
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    finish();
+                }}
+            }
+        });
 
     }
 }

@@ -72,7 +72,7 @@ public class AdminMainActivity extends AppCompatActivity {
                     name.add(s.getString("Name"));
                     age.add(s.getString("Age"));
                     mob.add(s.getString("Mobile No"));
-                    id.add(s.getString("id"));
+                    id.add(s.getString("Id"));
                 }
                 setRecyclerView();
 
