@@ -16,7 +16,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.Admin.AdminMainActivity;
+import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
 import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
 import com.example.schoolmanagementsystem.Results.ResultsActivity;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
@@ -32,7 +33,13 @@ public class HomeActivity extends AppCompatActivity {
     Button announcements,lectures,attendance,assignments,exams,results;
     TextView name;
 
-//    menu button
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setName();
+    }
+
+    //    menu button
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -59,7 +66,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         toolbarFxn();
-        setName();
         ids();  //setting up ids for buttons
 
     }
@@ -107,7 +113,7 @@ for(DocumentSnapshot s:value){
                 startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AdminMainActivity.class));
+                startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
                 break;
             case R.id.assignment:
                 startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));

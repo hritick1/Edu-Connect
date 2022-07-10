@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.schoolmanagementsystem.R;
 import com.example.schoolmanagementsystem.Results.Adapter_Results;
 import com.example.schoolmanagementsystem.Results.Data_Results;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -64,7 +65,7 @@ TextView heading;
 
 
     private void dataGet() {
-        FirebaseFirestore.getInstance().collection("Results").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 grade.clear();
@@ -74,7 +75,7 @@ TextView heading;
                 for(DocumentSnapshot s: value){
                     grade.add(s.getString("grade"));
                     date.add(s.getString("date"));
-                    subject.add(s.getString("subject"));
+                    subject.add(s.getString("subject1"));
                     marks.add(s.getString("marks"));
                 }
                 setRecyclerView();
@@ -87,6 +88,7 @@ TextView heading;
         recyclerView=findViewById(R.id.resultsRec);
         ArrayList<Data_Results> list=new ArrayList<>();
         for(int i=0;i<grade.size();i++){
+            if(subject.get(i)!=null && grade.get(i)!=null && date.get(i)!=null && marks.get(i)!=null)
             list.add(new Data_Results(subject.get(i),"Grade: "+grade.get(i),date.get(i),"Marks Scored: "+marks.get(i)));
         }
        Adapter_Results adapter_results=new Adapter_Results(list);

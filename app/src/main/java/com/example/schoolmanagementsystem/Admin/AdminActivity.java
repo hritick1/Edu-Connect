@@ -21,6 +21,7 @@ import com.example.schoolmanagementsystem.R;
 
 public class AdminActivity extends AppCompatActivity {
 TextView heading;
+String id;
     Button announcements,lectures,attendance,assignments,exams,results;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -49,6 +50,7 @@ TextView heading;
 
         toolbarFxn();
         ids();  //setting up ids for buttons
+        id=getIntent().getStringExtra("Id");
     }
     private void ids() {
         announcements=findViewById(R.id.announcement);
@@ -65,19 +67,19 @@ TextView heading;
                 startActivity(new Intent(AdminActivity.this, AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
+                startActivity(new Intent(getApplicationContext(), LecturesActivity.class).putExtra("id",id));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class).putExtra("id",id));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
+                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class).putExtra("id",id));
                 break;
             case R.id.exams:
-                startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class).putExtra("id",id));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class));
+                startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class).putExtra("id",id));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();

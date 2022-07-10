@@ -31,13 +31,14 @@ public class AdminExamsActivity extends AppCompatActivity {
     EditText ExamName,type,examPlatform,dateTime;
     Button viewUser,Upload;
     Map<String,Object> map=new HashMap<>();
-
+String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_exams);
         toolbarFxn();
         ID();
+        id=getIntent().getStringExtra("id");
         Upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +93,7 @@ public class AdminExamsActivity extends AppCompatActivity {
         map.put("Type",type.getText().toString());
         map.put("Platform",examPlatform.getText().toString());
         map.put("Date_Time",dateTime.getText().toString());
-        FirebaseFirestore.getInstance().collection("Examination").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if(task.isSuccessful()) {

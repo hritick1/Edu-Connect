@@ -31,6 +31,7 @@ public class Admin_Result_Activity extends AppCompatActivity {
     Button upload,view;
     EditText subject,date,grade,marks;
     Map<String,Object> map=new HashMap<String,Object>();
+    String id;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -57,6 +58,7 @@ public class Admin_Result_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_result);
         toolbarFxn();
         ids();
+        id=getIntent().getStringExtra("id");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +86,9 @@ public class Admin_Result_Activity extends AppCompatActivity {
     private void dataBase() {
         map.put("date",date.getText().toString());
         map.put("grade",grade.getText().toString());
-        map.put("subject",subject.getText().toString());
+        map.put("subject1",subject.getText().toString());
         map.put("marks",marks.getText().toString());
-        FirebaseFirestore.getInstance().collection("Results").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 Toast.makeText(getApplicationContext(), "Upload Successfull", Toast.LENGTH_SHORT).show();
