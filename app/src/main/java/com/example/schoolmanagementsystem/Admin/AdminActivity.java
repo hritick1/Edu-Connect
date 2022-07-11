@@ -65,7 +65,7 @@ TextView heading;
                 startActivity(new Intent(AdminActivity.this, AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminLecturesActivity.class));
                 break;
             case R.id.attendance:
                 startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class));

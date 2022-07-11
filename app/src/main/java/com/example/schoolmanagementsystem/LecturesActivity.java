@@ -1,11 +1,12 @@
 package com.example.schoolmanagementsystem;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -14,16 +15,30 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.tabs.TabLayout;
+import com.example.schoolmanagementsystem.Examination.ExamAdapter;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+
 
 public class LecturesActivity extends AppCompatActivity {
-    TabLayout tabLayout;
-    ViewPager viewPager;
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
+    FirebaseFirestore fireStore;
+    ArrayList<LecturesData> lecturesDataArrayList=new ArrayList<LecturesData>();
+    ArrayList<String>  time=new ArrayList<>();
+    ArrayList<String>  sub=new ArrayList<>();
+    ArrayList<String>  room=new ArrayList<>();
+
     TextView heading;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.logout){
+        if(item.getItemId()== R.id.logout){
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
@@ -44,17 +59,41 @@ public class LecturesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lectures);
+
         toolbarFxn();
+        getData();
 
-        viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
+    }
+    private void setRecyclerView(){
+        recyclerView=findViewById(R.id.lecturesrecycler);
+        layoutManager=new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        for(int i=0;i<time.size();i++){
+            lecturesDataArrayList.add(new LecturesData(time.get(i), sub.get(i), room.get(i)));
+        }
+        LecturesAdapter adapter=new LecturesAdapter(lecturesDataArrayList);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
 
-        tabLayout =findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
+    private void getData() {
+        FirebaseFirestore.getInstance().collection("Lectures").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                time.clear();
+                sub.clear();
+                room.clear();
 
+                for (DocumentSnapshot s:value){
+                    time.add(s.getString("Time"));
+                    sub.add(s.getString("Subject"));
+                    room.add(s.getString("Room"));
 
-
-
+                }
+                setRecyclerView();
+            }
+        });
     }
 
     private void toolbarFxn() {
