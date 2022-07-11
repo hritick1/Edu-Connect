@@ -31,7 +31,7 @@ import java.util.Map;
 public class AdminExamsActivity extends AppCompatActivity {
     TextView heading;
     EditText ExamName,type,examPlatform,dateTime;
-    Button viewUser,Upload;
+    Button Upload;
     Map<String,Object> map=new HashMap<>();
 String id;
     @Override
@@ -52,12 +52,6 @@ String id;
             }
         });
 
-        viewUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminExamsActivity.this, ExaminationActivity.class));
-            }
-        });
     }
 
     @Override
@@ -88,7 +82,6 @@ String id;
         type=findViewById(R.id.examtype);
         examPlatform=findViewById(R.id.platform);
         dateTime=findViewById(R.id.datetime);
-        viewUser=findViewById(R.id.view);
         Upload=findViewById(R.id.upload);
     }
     private void dataBase() {

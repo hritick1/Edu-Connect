@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class Admin_Result_Activity extends AppCompatActivity {
     TextView heading;
-    Button upload,view;
+    Button upload;
     EditText subject,date,grade,marks;
     Map<String,Object> map=new HashMap<String,Object>();
     String id;
@@ -63,12 +63,6 @@ public class Admin_Result_Activity extends AppCompatActivity {
         toolbarFxn();
         ids();
         id=getIntent().getStringExtra("id");
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResultsActivity.class));
-            }
-        });
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +99,6 @@ public class Admin_Result_Activity extends AppCompatActivity {
         subject=findViewById(R.id.subject);
         marks=findViewById(R.id.marks);
         upload=findViewById(R.id.upload);
-        view=findViewById(R.id.view);
+
     }
     }

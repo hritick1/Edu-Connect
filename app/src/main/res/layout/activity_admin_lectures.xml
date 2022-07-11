@@ -20,25 +20,33 @@
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"/>
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
+                android:text="Enter the details to Add Lecture class fo the student: "
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:textColorHint="@color/black"
-                android:minHeight="48dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:backgroundTint="@color/white"
+                android:layout_marginTop="60dp"
                 android:layout_marginRight="20dp"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
                 android:hint="Enter Lecture Time"
-                android:textSize="20sp"
-                android:id="@+id/time"/>
+                android:minHeight="48dp"
+                android:textColorHint="@color/black"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="17dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
@@ -54,7 +62,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="17dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
@@ -71,26 +79,16 @@
 
             <Button
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="55dp"
                 android:id="@+id/upload"
                 android:text="Upload"
                 android:textStyle="bold"
                 android:textColor="#f5f5f5"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:backgroundTint="#0C274E"/>
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/view"
-                android:text="View "
-                android:textStyle="bold"
-                android:textColor="#f5f5f5"
-                android:textSize="15dp"
-                android:layout_marginTop="35dp"
-                android:backgroundTint="#0C274E"/>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

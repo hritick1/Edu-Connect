@@ -29,7 +29,7 @@ import java.util.Map;
 public class AdminLecturesActivity extends AppCompatActivity {
     TextView heading;
     EditText Time,Subject,Room;
-    Button viewUser,Upload;
+    Button Upload;
     Map<String,Object> map=new HashMap<>();
 String id;
 
@@ -51,12 +51,7 @@ String id;
             }
         });
 
-        viewUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminLecturesActivity.this, LecturesActivity.class));
-            }
-        });
+
     }
 
     @Override
@@ -85,7 +80,6 @@ String id;
         Room=findViewById(R.id.room);
         Subject = findViewById(R.id.sub);
 
-        viewUser=findViewById(R.id.view);
         Upload=findViewById(R.id.upload);
     }
 

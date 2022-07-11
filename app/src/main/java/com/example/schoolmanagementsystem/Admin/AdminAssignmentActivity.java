@@ -31,7 +31,7 @@ import java.util.Map;
 public class AdminAssignmentActivity extends AppCompatActivity {
     TextView heading;
     EditText Assignment,subject;
-    Button viewUser,Upload;
+    Button  Upload;
     Map<String,Object> map=new HashMap<>();
     String id;
 
@@ -53,12 +53,6 @@ public class AdminAssignmentActivity extends AppCompatActivity {
             }
         });
 
-        viewUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminAssignmentActivity.this, AssignmentActivity.class));
-            }
-        });
     }
 
     @Override
@@ -86,7 +80,6 @@ public class AdminAssignmentActivity extends AppCompatActivity {
         Assignment=findViewById(R.id.assignment);
         subject=findViewById(R.id.subject);
 
-        viewUser=findViewById(R.id.view);
         Upload=findViewById(R.id.upload);
     }
 

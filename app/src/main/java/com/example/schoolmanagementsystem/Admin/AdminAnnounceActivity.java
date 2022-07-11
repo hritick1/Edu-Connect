@@ -35,7 +35,7 @@ public class AdminAnnounceActivity extends AppCompatActivity {
 AutoCompleteTextView topic;
 EditText date ,subject,full;
 TextView heading;
-Button upload ,view;
+Button upload;
 Map<String,Object> map=new HashMap<String,Object>();
 ArrayList<String> list=new ArrayList<>();
     @Override
@@ -77,17 +77,8 @@ ArrayList<String> list=new ArrayList<>();
                 date.setText("");
                 subject.setText("");
                 full.setText("");
-
-
             }
         });
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
-            }
-        });
-
     }
 
     private void autocomplete() {
@@ -120,7 +111,7 @@ map.put("full",full.getText().toString());
         FirebaseFirestore.getInstance().collection("Announcement").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
-                Toast.makeText(AdminAnnounceActivity.this, "Upload Successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAnnounceActivity.this, "Upload Successful!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -132,6 +123,6 @@ map.put("full",full.getText().toString());
         subject=findViewById(R.id.subject);
         full=findViewById(R.id.full);
         upload=findViewById(R.id.upload);
-        view=findViewById(R.id.view);
+
     }
 }

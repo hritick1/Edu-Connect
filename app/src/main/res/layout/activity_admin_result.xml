@@ -16,13 +16,20 @@
             android:layout_height="wrap_content">
             <include
                 android:id="@+id/toolbar"
-                layout="@layout/toolbar"></include>
+                layout="@layout/toolbar"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter the details to update the result of the student:"
+                android:textSize="30dp"
+                android:layout_margin="20"
+                android:textColor="@color/white"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="15dp"
                 android:minHeight="48dp"
                 android:background="@color/white"
@@ -33,12 +40,12 @@
                 android:hint="Enter Subject"
                 android:textSize="20sp"
                 android:id="@+id/subject"
-                ></EditText>
+                />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="15dp"
                 android:textColorHint="@color/black"
                 android:minHeight="48dp"
@@ -48,11 +55,11 @@
                 android:layout_marginRight="20dp"
                 android:hint="Enter Results Date"
                 android:textSize="20sp"
-                android:id="@+id/date"></EditText>
+                android:id="@+id/date"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="15dp"
                 android:textColorHint="@color/black"
                 android:minHeight="48dp"
@@ -62,11 +69,11 @@
                 android:layout_marginRight="20dp"
                 android:hint="Grade"
                 android:textSize="20sp"
-                android:id="@+id/grade"></EditText>
+                android:id="@+id/grade"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="15dp"
                 android:textColorHint="@color/black"
                 android:minHeight="48dp"
@@ -76,29 +83,21 @@
                 android:layout_marginRight="20dp"
                 android:hint="Marks"
                 android:textSize="20sp"
-                android:id="@+id/marks"></EditText>
+                android:id="@+id/marks"/>
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:id="@+id/upload"
-                android:text="Upload"
-                android:textStyle="bold"
-                android:textColor="#f5f5f5"
-                android:textSize="15dp"
-                android:backgroundTint="#0C274E"></Button>
-            <Button
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:id="@+id/view"
-                android:text="View "
-                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="#0C274E"
+                android:text="Upload"
                 android:textColor="#f5f5f5"
-                android:textSize="15dp"
-                android:backgroundTint="#0C274E"></Button>
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

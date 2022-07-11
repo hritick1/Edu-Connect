@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class Admin_Attend_Activity extends AppCompatActivity {
     TextView heading;
-Button update,view;
+Button update;
 String id;
 EditText subject,date,attendance,topic;
     Map<String,Object> map=new HashMap<String,Object>();
@@ -66,12 +66,7 @@ EditText subject,date,attendance,topic;
         toolbarFxn();
         ids();
         id=getIntent().getStringExtra("id");
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
-            }
-        });
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,6 +105,5 @@ startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
         subject=findViewById(R.id.subject);
         attendance=findViewById(R.id.attendance);
         update=findViewById(R.id.update);
-        view=findViewById(R.id.view);
     }
 }
