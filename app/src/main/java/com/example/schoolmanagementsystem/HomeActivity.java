@@ -16,11 +16,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Admin.AdminMainActivity;
 import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
-import com.example.schoolmanagementsystem.Admin.AdminActivity;
 import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
 import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
+import com.example.schoolmanagementsystem.Lectures.LecturesActivity;
 import com.example.schoolmanagementsystem.Results.ResultsActivity;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
 import com.example.schoolmanagementsystem.signin.LoginActivity;
@@ -61,11 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,9 +91,9 @@ for(DocumentSnapshot s:value){
         setSupportActionBar(toolbar);
         heading.setText("Dashboard");
         getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+
     }
 
     private void ids() {
@@ -116,7 +111,7 @@ for(DocumentSnapshot s:value){
                 startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(),LecturesActivity.class));
+                startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
                 break;
             case R.id.attendance:
                 startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));

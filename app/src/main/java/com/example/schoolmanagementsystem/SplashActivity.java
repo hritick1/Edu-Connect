@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
 
              public void run(){
                  try{
-                     sleep(5000);  //Waiting Time
+                     sleep(4000);  //Waiting Time
 
                  }catch (Exception ex){
                      ex.printStackTrace();
@@ -45,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                          checkUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
                      else
                          startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                     finish();
+
 
                  }
              }

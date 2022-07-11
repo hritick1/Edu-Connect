@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.schoolmanagementsystem.LecturesActivity;
+import com.example.schoolmanagementsystem.Lectures.LecturesActivity;
 import com.example.schoolmanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,8 +25,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.security.auth.Subject;
 
 public class AdminLecturesActivity extends AppCompatActivity {
     TextView heading;

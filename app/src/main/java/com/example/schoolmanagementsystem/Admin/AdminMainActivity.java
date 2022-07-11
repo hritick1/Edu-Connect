@@ -52,11 +52,7 @@ public class AdminMainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,9 +99,9 @@ public class AdminMainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         heading.setText("View Students");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-        toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+
 
     }
 }

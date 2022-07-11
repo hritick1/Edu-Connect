@@ -1,6 +1,7 @@
 package com.example.schoolmanagementsystem.Admin;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -15,16 +16,26 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
-import com.example.schoolmanagementsystem.LecturesActivity;
 import com.example.schoolmanagementsystem.R;
 import com.example.schoolmanagementsystem.signin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class AdminActivity extends AppCompatActivity {
-TextView heading;
+TextView heading,name;
 String id;
     Button announcements,lectures,attendance,assignments,exams,results;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setName();
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -100,5 +111,17 @@ String id;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
+    }
+    private void setName() {
+        name=findViewById(R.id.name);
+        FirebaseFirestore.getInstance().collection(id).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for(DocumentSnapshot s:value){
+                    name.setText(s.getString("Name"));
+                }
+            }
+        });
+
     }
 }
