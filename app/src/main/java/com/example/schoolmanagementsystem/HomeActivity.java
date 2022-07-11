@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.Admin.AdminMainActivity;
 import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
+import com.example.schoolmanagementsystem.Admin.AdminActivity;
+import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
 import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
 import com.example.schoolmanagementsystem.Results.ResultsActivity;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
@@ -66,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         toolbarFxn();
+        //setName();
         ids();  //setting up ids for buttons
 
     }
@@ -116,7 +119,7 @@ for(DocumentSnapshot s:value){
                 startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(),AssignmentActivity.class));
+                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
                 break;
             case R.id.exam:
                 startActivity(new Intent(getApplicationContext(), ExaminationActivity.class));

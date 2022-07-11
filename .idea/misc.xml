@@ -21,6 +21,7 @@
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_announce.xml" value="0.264" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_attend.xml" value="0.264" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_lectures.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_admin_result.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/activity_announcement.xml" value="0.27447916666666666" />
@@ -41,6 +42,7 @@
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_announcement.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_attendance.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/items_result.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/lecturescard.xml" value="0.27025641025641023" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/layout/toolbar.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/hjha9/AndroidStudioProjects/School-Management-System/app/src/main/res/menu/menu.xml" value="0.27447916666666666" />
       </map>
