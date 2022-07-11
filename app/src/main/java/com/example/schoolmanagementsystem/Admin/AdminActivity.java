@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.AssignmentActivity;
+import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
 import com.example.schoolmanagementsystem.LecturesActivity;
 import com.example.schoolmanagementsystem.R;
 

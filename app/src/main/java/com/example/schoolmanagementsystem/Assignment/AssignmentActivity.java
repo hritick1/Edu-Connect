@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem;
+package com.example.schoolmanagementsystem.Assignment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +15,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.Examination.ExamAdapter;
+import com.example.schoolmanagementsystem.Assignment.AssignmentAdapter;
+import com.example.schoolmanagementsystem.Assignment.AssignmentData;
+
+
+import com.example.schoolmanagementsystem.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,16 +28,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-
-public class LecturesActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
-    LinearLayoutManager layoutManager;
-    ArrayList<LecturesData> lecturesDataArrayList=new ArrayList<>();
-    ArrayList<String>  time=new ArrayList<>();
-    ArrayList<String>  sub=new ArrayList<>();
-    ArrayList<String>  room=new ArrayList<>();
-
+public class AssignmentActivity extends AppCompatActivity {
     TextView heading;
+    RecyclerView recyclerView;
+
+    LinearLayoutManager layoutManager;
+    ArrayList<AssignmentData> assignmentDataArrayList=new ArrayList<>();
+    ArrayList<String> assignment=new ArrayList<>();
+    ArrayList<String> subject=new ArrayList<>();
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -57,50 +59,48 @@ public class LecturesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lectures);
+        setContentView(R.layout.activity_assignment);
 
         toolbarFxn();
         getData();
 
     }
     private void setRecyclerView(){
-        recyclerView=findViewById(R.id.lecturesrecycler);
-        layoutManager=new LinearLayoutManager(getApplicationContext());
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        for(int i=0;i<sub.size();i++){
-            lecturesDataArrayList.add(new LecturesData(time.get(i), sub.get(i), room.get(i)));
+        recyclerView=findViewById(R.id.assignrecycler);
+//        layoutManager=new LinearLayoutManager(this);
+//        layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+        for(int i=0;i<assignment.size();i++){
+            assignmentDataArrayList.add(new AssignmentData(assignment.get(i),subject.get(i)));
         }
-        LecturesAdapter adapter=new LecturesAdapter(lecturesDataArrayList);
+        AssignmentAdapter adapter=new AssignmentAdapter(assignmentDataArrayList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
 
     private void getData() {
-        FirebaseFirestore.getInstance().collection("Lectures").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection("Assignment").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                assignment.clear();
+                subject.clear();
 
-                time.clear();
-                sub.clear();
-                room.clear();
 
                 for (DocumentSnapshot s:value){
-                    time.add(s.getString("Time"));
-                    sub.add(s.getString("Subject"));
-                    room.add(s.getString("Room"));
+                    assignment.add(s.getString("Assignment"));
+                    subject.add(s.getString("Subject"));
 
                 }
                 setRecyclerView();
             }
         });
     }
-
     private void toolbarFxn() {
         heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        heading.setText("Lecture For Today");
+        heading.setText("Assignment");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
