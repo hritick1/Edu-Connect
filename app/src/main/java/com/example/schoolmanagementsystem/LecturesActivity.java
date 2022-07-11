@@ -28,8 +28,7 @@ import java.util.ArrayList;
 public class LecturesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    FirebaseFirestore fireStore;
-    ArrayList<LecturesData> lecturesDataArrayList=new ArrayList<LecturesData>();
+    ArrayList<LecturesData> lecturesDataArrayList=new ArrayList<>();
     ArrayList<String>  time=new ArrayList<>();
     ArrayList<String>  sub=new ArrayList<>();
     ArrayList<String>  room=new ArrayList<>();
@@ -66,10 +65,10 @@ public class LecturesActivity extends AppCompatActivity {
     }
     private void setRecyclerView(){
         recyclerView=findViewById(R.id.lecturesrecycler);
-        layoutManager=new LinearLayoutManager(this);
+        layoutManager=new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        for(int i=0;i<time.size();i++){
+        for(int i=0;i<sub.size();i++){
             lecturesDataArrayList.add(new LecturesData(time.get(i), sub.get(i), room.get(i)));
         }
         LecturesAdapter adapter=new LecturesAdapter(lecturesDataArrayList);
@@ -81,6 +80,7 @@ public class LecturesActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance().collection("Lectures").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
                 time.clear();
                 sub.clear();
                 room.clear();

@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 
 public class LecturesAdapter extends RecyclerView.Adapter<LecturesAdapter.ViewHolder> {
-    ArrayList<LecturesData> lecturesData = new ArrayList<>();
+    ArrayList<LecturesData> lecturesData ;
 
-    public LecturesAdapter(ArrayList<LecturesData> lecturesDataArrayList) {
+    public LecturesAdapter(ArrayList<LecturesData> lecturesData) {
         this.lecturesData=lecturesData;
     }
 
@@ -22,11 +22,11 @@ public class LecturesAdapter extends RecyclerView.Adapter<LecturesAdapter.ViewHo
     @Override
     public LecturesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lecturescard, parent, false);
-        return new LecturesAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LecturesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String time = lecturesData.get(position).getTime();
         String sub = lecturesData.get(position).getSubject();
         String room = lecturesData.get(position).getRoom();
@@ -45,7 +45,7 @@ public class LecturesAdapter extends RecyclerView.Adapter<LecturesAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            Time = itemView.findViewById(R.id.name);
+            Time = itemView.findViewById(R.id.time);
             Subject = itemView.findViewById(R.id.sub);
             Room = itemView.findViewById(R.id.room);
 

@@ -20,6 +20,9 @@
             android:name=".Admin.AdminAssignmentActivity"
             android:exported="false" />
         <activity
+            android:name=".Admin.AdminLecturesActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin.AdminExamsActivity"
             android:exported="false" />
         <activity
