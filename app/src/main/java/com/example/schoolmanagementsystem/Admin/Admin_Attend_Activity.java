@@ -18,8 +18,10 @@ import android.widget.Toast;
 
 import com.example.schoolmanagementsystem.Attendance.AttendanceActivity;
 import com.example.schoolmanagementsystem.R;
+import com.example.schoolmanagementsystem.signin.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -38,7 +40,10 @@ EditText subject,date,attendance,topic;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(item.getItemId()==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

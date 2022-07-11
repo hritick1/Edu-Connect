@@ -1,4 +1,4 @@
-package com.example.schoolmanagementsystem.announcement;
+package com.example.schoolmanagementsystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +13,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.schoolmanagementsystem.R;
 import com.example.schoolmanagementsystem.signin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ViewAnnounceActivity extends AppCompatActivity {
-TextView heading,subject,date,full;
+public class AssignmentActivity extends AppCompatActivity {
+    TextView heading;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -44,22 +43,20 @@ TextView heading,subject,date,full;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_announce);
+        setContentView(R.layout.activity_assignment);
         toolbarFxn();
-        subject=findViewById(R.id.subject);
-        date=findViewById(R.id.date);
-        full=findViewById(R.id.full);
-        subject.setText(getIntent().getStringExtra("subject"));
-        date.setText(getIntent().getStringExtra("date"));
-        full.setText(getIntent().getStringExtra("full"));
+
+
     }
 
+
+
     private void toolbarFxn() {
-        heading=findViewById(R.id.toolbarText);   //textview for toolbar
+        heading=findViewById(R.id.toolbarText);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        heading.setText("View Announcement");
-        getSupportActionBar().setDisplayShowTitleEnabled(false);//setting up toolbar
+        heading.setText("Assignment");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);

@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import com.example.schoolmanagementsystem.signin.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LecturesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -37,9 +40,11 @@ public class LecturesActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()== R.id.logout){
+        if(item.getItemId()==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
-        }
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            finish();        }
         return super.onOptionsItemSelected(item);
     }
 

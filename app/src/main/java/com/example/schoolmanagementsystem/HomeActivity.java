@@ -23,6 +23,7 @@ import com.example.schoolmanagementsystem.Assignment.AssignmentActivity;
 import com.example.schoolmanagementsystem.Examination.ExaminationActivity;
 import com.example.schoolmanagementsystem.Results.ResultsActivity;
 import com.example.schoolmanagementsystem.announcement.AnnouncementActivity;
+import com.example.schoolmanagementsystem.signin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -46,7 +47,10 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(item.getItemId()==R.id.logout){
+            FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
