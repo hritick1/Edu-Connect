@@ -20,6 +20,7 @@ import com.example.schoolmanagementsystem.Assignment.AssignmentData;
 
 
 import com.example.schoolmanagementsystem.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -71,6 +72,7 @@ public class AssignmentActivity extends AppCompatActivity {
 //        layoutManager.setOrientation(RecyclerView.VERTICAL);
 
         for(int i=0;i<assignment.size();i++){
+            if(assignment.get(i)!=null && subject.get(i)!=null)
             assignmentDataArrayList.add(new AssignmentData(assignment.get(i),subject.get(i)));
         }
         AssignmentAdapter adapter=new AssignmentAdapter(assignmentDataArrayList);
@@ -80,7 +82,7 @@ public class AssignmentActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        FirebaseFirestore.getInstance().collection("Assignment").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 assignment.clear();
@@ -89,7 +91,7 @@ public class AssignmentActivity extends AppCompatActivity {
 
                 for (DocumentSnapshot s:value){
                     assignment.add(s.getString("Assignment"));
-                    subject.add(s.getString("Subject"));
+                    subject.add(s.getString("SubjectAss"));
 
                 }
                 setRecyclerView();

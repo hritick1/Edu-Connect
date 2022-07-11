@@ -22,14 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class SplashActivity extends AppCompatActivity {
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
-        checkUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        else
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +41,10 @@ public class SplashActivity extends AppCompatActivity {
 
                  }
                  finally {
-                     Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
-                     startActivity(intent);
+                     if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+                         checkUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                     else
+                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                      finish();
 
                  }

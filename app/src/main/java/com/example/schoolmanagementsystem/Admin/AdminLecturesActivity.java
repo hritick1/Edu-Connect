@@ -33,7 +33,7 @@ public class AdminLecturesActivity extends AppCompatActivity {
     EditText Time,Subject,Room;
     Button viewUser,Upload;
     Map<String,Object> map=new HashMap<>();
-
+String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class AdminLecturesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_lectures);
         toolbarFxn();
         ID();
+        id=getIntent().getStringExtra("id");
         Upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,10 +93,10 @@ public class AdminLecturesActivity extends AppCompatActivity {
 
     private void dataBase() {
         map.put("Time", Time.getText().toString());
-        map.put("Subject", Subject.getText().toString());
+        map.put("subjectLec", Subject.getText().toString());
         map.put("Room", Room.getText().toString());
 
-        FirebaseFirestore.getInstance().collection("Lectures").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if(task.isSuccessful()) {

@@ -74,6 +74,7 @@ public class LecturesActivity extends AppCompatActivity {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         for(int i=0;i<sub.size();i++){
+            if(time.get(i)!=null && sub.get(i)!=null && room.get(i)!=null )
             lecturesDataArrayList.add(new LecturesData(time.get(i), sub.get(i), room.get(i)));
         }
         LecturesAdapter adapter=new LecturesAdapter(lecturesDataArrayList);
@@ -82,7 +83,7 @@ public class LecturesActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        FirebaseFirestore.getInstance().collection("Lectures").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
@@ -92,7 +93,7 @@ public class LecturesActivity extends AppCompatActivity {
 
                 for (DocumentSnapshot s:value){
                     time.add(s.getString("Time"));
-                    sub.add(s.getString("Subject"));
+                    sub.add(s.getString("subjectLec"));
                     room.add(s.getString("Room"));
 
                 }

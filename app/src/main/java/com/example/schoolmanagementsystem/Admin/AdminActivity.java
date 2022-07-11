@@ -72,13 +72,13 @@ String id;
                 startActivity(new Intent(AdminActivity.this, AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(), LecturesActivity.class).putExtra("id",id));
+                startActivity(new Intent(getApplicationContext(), AdminLecturesActivity.class).putExtra("id",id));
                 break;
             case R.id.attendance:
                 startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class).putExtra("id",id));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class).putExtra("id",id));
+                startActivity(new Intent(getApplicationContext(), AdminAssignmentActivity.class).putExtra("id",id));
                 break;
             case R.id.exams:
                 startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class).putExtra("id",id));

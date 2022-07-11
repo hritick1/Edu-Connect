@@ -72,7 +72,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         toolbarFxn();
-        //setName();
         ids();  //setting up ids for buttons
 
     }

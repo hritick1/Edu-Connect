@@ -33,6 +33,7 @@ public class AdminAssignmentActivity extends AppCompatActivity {
     EditText Assignment,subject;
     Button viewUser,Upload;
     Map<String,Object> map=new HashMap<>();
+    String id;
 
 
     @Override
@@ -41,6 +42,7 @@ public class AdminAssignmentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_assignment);
         toolbarFxn();
         ID();
+        id=getIntent().getStringExtra("id");
         Upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,9 +92,9 @@ public class AdminAssignmentActivity extends AppCompatActivity {
 
     private void dataBase() {
         map.put("Assignment", Assignment.getText().toString());
-        map.put("Subject", subject.getText().toString());
+        map.put("subjectAss", subject.getText().toString());
 
-        FirebaseFirestore.getInstance().collection("Assignment").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if(task.isSuccessful()) {
