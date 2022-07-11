@@ -31,7 +31,6 @@ import java.util.ArrayList;
 public class ExaminationActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    FirebaseFirestore fireStore;
     ArrayList<ExamData> examDataArrayList=new ArrayList<>();
     ArrayList<String>  examName=new ArrayList<>();
     ArrayList<String>  platform=new ArrayList<>();
@@ -83,7 +82,6 @@ public class ExaminationActivity extends AppCompatActivity {
         }
         ExamAdapter adapter=new ExamAdapter(examDataArrayList);
         recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
     }
 
     private void getData() {
@@ -117,4 +115,3 @@ public class ExaminationActivity extends AppCompatActivity {
 
     }
 }
-

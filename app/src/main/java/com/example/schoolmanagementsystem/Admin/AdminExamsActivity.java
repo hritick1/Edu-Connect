@@ -91,13 +91,12 @@ String id;
         viewUser=findViewById(R.id.view);
         Upload=findViewById(R.id.upload);
     }
-
     private void dataBase() {
         map.put("Exam Name",ExamName.getText().toString());
         map.put("Type",type.getText().toString());
         map.put("Platform",examPlatform.getText().toString());
         map.put("Date_Time",dateTime.getText().toString());
-        FirebaseFirestore.getInstance().collection(id).add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        FirebaseFirestore.getInstance().collection("Examination").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if(task.isSuccessful()) {
@@ -118,6 +117,5 @@ String id;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getOverflowIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
         toolbar.getNavigationIcon().setColorFilter(Color.parseColor("#f5f5f5"), PorterDuff.Mode.SRC_ATOP);
-
     }
 }
