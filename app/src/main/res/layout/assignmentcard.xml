@@ -20,7 +20,7 @@ android:gravity="center">
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/task"
-            android:background="#C6F492"
+            android:background="#0C274E"
             android:contentDescription="Assignment Image" />
 
         <LinearLayout
@@ -46,7 +46,7 @@ android:gravity="center">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:textColor="#C6F492"
+                android:textColor="#0C274E"
                 android:layout_marginLeft="80dp"
                 android:text="DOWNLOAD"
                 android:backgroundTint="@color/design_default_color_background"
