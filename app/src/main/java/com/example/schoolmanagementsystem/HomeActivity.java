@@ -114,22 +114,22 @@ for(DocumentSnapshot s:value){
     public void clicked(View view) {
         switch(view.getId()){
             case R.id.announcement:
-                startActivity(new Intent(getApplicationContext(), AnnouncementActivity.class));
+                startActivity(new Intent(HomeActivity.this, AnnouncementActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(), LecturesActivity.class));
+                startActivity(new Intent(HomeActivity.this, LecturesActivity.class));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), AttendanceActivity.class));
+                startActivity(new Intent(HomeActivity.this, AttendanceActivity.class));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(), AssignmentActivity.class));
+                startActivity(new Intent(HomeActivity.this, AssignmentActivity.class));
                 break;
             case R.id.exam:
-                startActivity(new Intent(getApplicationContext(), ExaminationActivity.class));
+                startActivity(new Intent(HomeActivity.this, ExaminationActivity.class));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(), ResultsActivity.class));
+                startActivity(new Intent(HomeActivity.this, ResultsActivity.class));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();
