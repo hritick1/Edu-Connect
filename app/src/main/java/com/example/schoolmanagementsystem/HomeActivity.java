@@ -82,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 for(DocumentSnapshot s:value){
+    if(s.getString("Name")!=null)
     name.setText(s.getString("Name"));
 }
             }

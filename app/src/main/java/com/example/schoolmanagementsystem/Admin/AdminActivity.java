@@ -118,7 +118,8 @@ String id;
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 for(DocumentSnapshot s:value){
-                    name.setText(s.getString("Name"));
+                    if(s.getString("Name")!=null)
+                        name.setText(s.getString("Name"));
                 }
             }
         });
