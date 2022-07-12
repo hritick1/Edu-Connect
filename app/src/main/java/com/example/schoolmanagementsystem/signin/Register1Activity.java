@@ -97,6 +97,7 @@ FirebaseFirestore.getInstance().collection("Students").add(map).addOnSuccessList
         Toast.makeText(Register1Activity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
 
         startActivity(new Intent(Register1Activity.this,LoginActivity.class));
+        finish();
     }
 }).addOnFailureListener(new OnFailureListener() {
     @Override

@@ -70,6 +70,11 @@ public class HomeActivity extends AppCompatActivity {
         ids();  //setting up ids for buttons
 
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 
     private void setName() {
         name=findViewById(R.id.name);
