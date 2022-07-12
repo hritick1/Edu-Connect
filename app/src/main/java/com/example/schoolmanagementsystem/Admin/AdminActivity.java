@@ -83,19 +83,19 @@ String id;
                 startActivity(new Intent(AdminActivity.this, AdminAnnounceActivity.class));
                 break;
             case R.id.lectures:
-                startActivity(new Intent(getApplicationContext(), AdminLecturesActivity.class).putExtra("id",id));
+                startActivity(new Intent(AdminActivity.this, AdminLecturesActivity.class).putExtra("id",id));
                 break;
             case R.id.attendance:
-                startActivity(new Intent(getApplicationContext(), Admin_Attend_Activity.class).putExtra("id",id));
+                startActivity(new Intent(AdminActivity.this, Admin_Attend_Activity.class).putExtra("id",id));
                 break;
             case R.id.assignment:
-                startActivity(new Intent(getApplicationContext(), AdminAssignmentActivity.class).putExtra("id",id));
+                startActivity(new Intent(AdminActivity.this, AdminAssignmentActivity.class).putExtra("id",id));
                 break;
             case R.id.exams:
-                startActivity(new Intent(getApplicationContext(), AdminExamsActivity.class).putExtra("id",id));
+                startActivity(new Intent(AdminActivity.this, AdminExamsActivity.class).putExtra("id",id));
                 break;
             case R.id.result:
-                startActivity(new Intent(getApplicationContext(), Admin_Result_Activity.class).putExtra("id",id));
+                startActivity(new Intent(AdminActivity.this, Admin_Result_Activity.class).putExtra("id",id));
                 break;
             default:
                 Toast.makeText(this, "Wrong click!!!", Toast.LENGTH_SHORT).show();
