@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Enter the details to update the result of the student:"
                 android:textSize="30dp"
-                android:layout_margin="20"
+                android:layout_margin="20dp"
                 android:textColor="@color/white"/>
 
             <EditText

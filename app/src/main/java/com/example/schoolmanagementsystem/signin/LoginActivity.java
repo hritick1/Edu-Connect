@@ -34,7 +34,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private FirebaseFirestore db=FirebaseFirestore.getInstance();
+
     private EditText Usermail;
     private EditText Password;
     private Button login;

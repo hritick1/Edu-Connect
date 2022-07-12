@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/education" ></com.airbnb.lottie.LottieAnimationView>
+        app:lottie_rawRes="@raw/education" />
 
 
 
