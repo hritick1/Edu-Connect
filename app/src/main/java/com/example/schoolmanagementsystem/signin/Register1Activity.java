@@ -83,12 +83,13 @@ public class Register1Activity extends AppCompatActivity {
 
                             HashMap<String,Object> map=new HashMap<>();
                             map.put("Name",name.getText().toString());
+                            map.put("isUser",1);
                             FirebaseFirestore.getInstance().collection(userId).add(map);
                             map.put("Mobile No",mobile.getText().toString());
                             map.put("Age",age.getText().toString());
                             map.put("Address",Address.getText().toString());
                             map.put("Id",userId);
-                            map.put("isUser",1);
+
 FirebaseFirestore.getInstance().collection("Students").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
     @Override
     public void onSuccess(DocumentReference documentReference) {

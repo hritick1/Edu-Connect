@@ -91,7 +91,7 @@ public class AssignmentActivity extends AppCompatActivity {
 
                 for (DocumentSnapshot s:value){
                     assignment.add(s.getString("Assignment"));
-                    subject.add(s.getString("SubjectAss"));
+                    subject.add(s.getString("subjectAss"));
 
                 }
                 setRecyclerView();
