@@ -33,6 +33,8 @@ Launch the app on your Android device.
 
 On the login screen, enter your credentials as a teacher or student.
 
+Application Download Link:https://github.com/hritick1/Edu-Connect/tree/main/Apk
+
 Explore the features available based on your user role.
 
 Follow the intuitive user interface to navigate through announcements, results, marks, and assignments.
